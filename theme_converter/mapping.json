@@ -1,0 +1,26 @@
+{
+  "colors": {
+    "hilite-foreground": "SELECTION_FOREGROUND",
+    "hilite-background": "SELECTION_BACKGROUND",
+    "context-background": "CARET_ROW_COLOR",
+    "linenumber-foreground": "LINE_NUMBERS_COLOR",
+    "linenumber-background": "GUTTER_BACKGROUND",
+    "cursor-foreground": "CARET_COLOR"
+  },
+  "attributes": {
+    "normal": "TEXT",
+    "keyword": "DEFAULT_KEYWORD",
+    "builtin": "PY.BUILTIN_NAME",
+    "comment": "PY.LINE_COMMENT",
+    "comment_inherits": "DEFAULT_LINE_COMMENT",
+    "string": "DEFAULT_STRING",
+    "definition": "PY.FUNC_DEFINITION",
+    "hilite": "",
+    "break": "BREAKPOINT_ATTRIBUTES",
+    "hit": "SEARCH_RESULT_ATTRIBUTES",
+    "error": "ERRORS_ATTRIBUTES",
+    "stdout": "CONSOLE_NORMAL_OUTPUT",
+    "stderr": "CONSOLE_ERROR_OUTPUT",
+    "console": "CONSOLE_USER_INPUT"
+  }
+}
