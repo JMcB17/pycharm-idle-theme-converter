@@ -1,6 +1,6 @@
 {
   "colors": {
-    "hilite-foreground": "SELECTION_FOREGROUND",
+    "hilite-foreground": ["SELECTION_FOREGROUND", "TEXT"],
     "hilite-background": "SELECTION_BACKGROUND",
     "context-background": "CARET_ROW_COLOR",
     "linenumber-foreground": "LINE_NUMBERS_COLOR",
@@ -10,12 +10,10 @@
   "attributes": {
     "normal": "TEXT",
     "keyword": "DEFAULT_KEYWORD",
-    "builtin": "PY.BUILTIN_NAME",
-    "comment": "PY.LINE_COMMENT",
-    "comment_inherits": "DEFAULT_LINE_COMMENT",
+    "builtin": ["PY.BUILTIN_NAME", "DEFAULT_PREDEFINED_SYMBOL", "DEFAULT_IDENTIFIER"],
+    "comment": ["PY.LINE_COMMENT", "DEFAULT_LINE_COMMENT"],
     "string": "DEFAULT_STRING",
-    "definition": "PY.FUNC_DEFINITION",
-    "hilite": "",
+    "definition": ["PY.FUNC_DEFINITION", "DEFAULT_FUNCTION_DECLARATION", "DEFAULT_IDENTIFIER"],
     "break": "BREAKPOINT_ATTRIBUTES",
     "hit": "SEARCH_RESULT_ATTRIBUTES",
     "error": "ERRORS_ATTRIBUTES",
