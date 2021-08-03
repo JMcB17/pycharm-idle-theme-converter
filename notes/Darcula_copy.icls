@@ -1,9 +1,9 @@
 <scheme name="Darcula copy" version="142" parent_scheme="Darcula">
   <metaInfo>
-    <property name="created">2021-08-02T21:32:39</property>
+    <property name="created">2021-08-03T14:28:38</property>
     <property name="ide">Python</property>
     <property name="ideVersion">2021.2.0.0</property>
-    <property name="modified">2021-08-02T21:33:54</property>
+    <property name="modified">2021-08-03T14:29:01</property>
     <property name="originalScheme">Darcula copy</property>
   </metaInfo>
   <colors>
@@ -35,6 +35,11 @@
       <value>
         <option name="FOREGROUND" value="ffffff" />
         <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="DEFAULT_IDENTIFIER">
+      <value>
+        <option name="FOREGROUND" value="ffffff" />
       </value>
     </option>
     <option name="DEFAULT_KEYWORD">
@@ -77,6 +82,16 @@
     <option name="PY.BUILTIN_NAME">
       <value>
         <option name="FOREGROUND" value="ffffff" />
+      </value>
+    </option>
+    <option name="PY.FUNC_DEFINITION">
+      <value>
+        <option name="FOREGROUND" value="ffffff" />
+      </value>
+    </option>
+    <option name="PY.LINE_COMMENT">
+      <value>
+        <option name="FOREGROUND" value="0" />
       </value>
     </option>
     <option name="SEARCH_RESULT_ATTRIBUTES">
