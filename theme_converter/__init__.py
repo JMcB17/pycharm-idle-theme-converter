@@ -28,7 +28,7 @@ def get_parser() -> argparse.ArgumentParser:
 def download_defaults(defaults_url: str = DEFAULTCOLORSCHEMESMANAGER_XML_URL) -> BeautifulSoup:
     """Get the default colour schemes xml from the IntelliJ Community GitHub repo and put it in a soup."""
     response = requests.get(defaults_url)
-    soup = BeautifulSoup(response.raw)
+    soup = BeautifulSoup(response.content, 'html.parser')
     return soup
 
 
@@ -49,7 +49,7 @@ def main():
 
     icls_file = args.icls_file
     icls_contents = icls_file.read_text()
-    icls_soup = BeautifulSoup(icls_contents)
+    icls_soup = BeautifulSoup(icls_contents, 'html.parser')
     mapping_path = MAPPINGS_DIRECTORY / 'pycharm.json'
     with open(mapping_path, encoding='utf-8') as mapping_file:
         pycharm_mapping = json.load(mapping_file)

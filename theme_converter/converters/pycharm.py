@@ -22,8 +22,8 @@ def convert(theme: BeautifulSoup, defaults: BeautifulSoup, mapping: dict) -> dic
     idle_theme = {}
 
     # todo: handle failure here
-    parent_theme_name = theme.scheme.parent_scheme
-    parent_theme = defaults.find(parent_theme_name)
+    parent_theme_name = theme.scheme['parent_scheme']
+    parent_theme = defaults.find('scheme', attrs={'name': parent_theme_name})
 
     for idle_key, pycharm_key in mapping['colors'].values():
         pycharm_color_tag = _find_key_with_fallbacks([theme, parent_theme], pycharm_key)
