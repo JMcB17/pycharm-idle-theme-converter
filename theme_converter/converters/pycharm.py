@@ -1,4 +1,6 @@
 from typing import Union, List
+
+import requests
 from bs4 import BeautifulSoup
 from bs4.element import Tag  # type hints
 
@@ -6,7 +8,16 @@ from bs4.element import Tag  # type hints
 # todo: fix mapping for error, the pycharm key it's mapped to doesn't have fg or bg but does have effect
 
 
+DEFAULTCOLORSCHEMESMANAGER_XML_URL = 'https://raw.githubusercontent.com/JetBrains/intellij-community/master' \
+                                     '/platform/platform-resources/src/DefaultColorSchemesManager.xml'
 ATTR_MAPPING = {'-foreground': 'FOREGROUND', '-background': 'BACKGROUND'}
+
+
+def _download_defaults(defaults_url: str = DEFAULTCOLORSCHEMESMANAGER_XML_URL) -> BeautifulSoup:
+    """Get the default colour schemes xml from the IntelliJ Community GitHub repo and put it in a soup."""
+    response = requests.get(defaults_url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    return soup
 
 
 def _find_key_with_fallbacks(themes: Union[Tag, List[Tag]], keys: Union[str, List[str]]) -> List[Tag]:
@@ -28,9 +39,12 @@ def _find_key_with_fallbacks(themes: Union[Tag, List[Tag]], keys: Union[str, Lis
     return hits
 
 
-def convert(theme: BeautifulSoup, defaults: BeautifulSoup, mapping: dict) -> dict:
+def convert(theme: BeautifulSoup, mapping: dict) -> dict:
     """Convert an IntelliJ IDEA .icls theme to a dict for configparser."""
     idle_theme = {}
+
+    # todo: make this cached
+    defaults = _download_defaults()
 
     # todo: handle failure here
     parent_theme_name = theme.scheme['parent_scheme']
