@@ -3,6 +3,7 @@
     "hilite-foreground": ["SELECTION_FOREGROUND", "TEXT"],
     "hilite-background": "SELECTION_BACKGROUND",
     "context-background": "CARET_ROW_COLOR",
+    "context-foreground": "TEXT",
     "linenumber-foreground": "LINE_NUMBERS_COLOR",
     "linenumber-background": "GUTTER_BACKGROUND",
     "cursor-foreground": "CARET_COLOR"
