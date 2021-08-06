@@ -8,6 +8,12 @@ from bs4 import BeautifulSoup
 import theme_converter.converters.pycharm
 
 
+# todo: setup.py
+# todo: search in folder for valid files
+# todo: search in default pycharm theme install location
+# todo: support other formats
+
+
 MAPPINGS_DIRECTORY = Path('mappings/')
 IDLERC_DIRECTORY = Path.home() / '.idlerc'
 CONFIG_MAIN_CFG = IDLERC_DIRECTORY / 'config-highlight.cfg'
