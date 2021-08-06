@@ -12,6 +12,7 @@ import theme_converter.converters.pycharm
 # todo: search in folder for valid files
 # todo: search in default pycharm theme install location
 # todo: support other formats
+# todo: fonts
 
 
 MAPPINGS_DIRECTORY = Path('mappings/')
