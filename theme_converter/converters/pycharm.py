@@ -46,6 +46,7 @@ def convert(theme: BeautifulSoup, mapping: dict) -> dict:
     # todo: make this cached
     defaults = _download_defaults()
 
+    theme_name = theme.scheme['name']
     # todo: handle failure here
     parent_theme_name = theme.scheme['parent_scheme']
     parent_theme = defaults.find('scheme', attrs={'name': parent_theme_name})
@@ -78,4 +79,4 @@ def convert(theme: BeautifulSoup, mapping: dict) -> dict:
     for key, value in idle_theme.items():
         idle_theme[key] = '#' + value.upper()
 
-    return idle_theme
+    return {theme_name: idle_theme}

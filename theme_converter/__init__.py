@@ -22,13 +22,15 @@ def get_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def save_idle_theme(theme_name: str, theme: dict, config_highlight_path: Path):
-    """Save the IDLE theme to the config-highlight.cfg file with name theme_name."""
+def save_idle_theme(themes: dict, config_highlight_path: Path):
+    """Save the IDLE themes to the config-highlight.cfg file."""
     config_highlight = configparser.ConfigParser()
     config_highlight.read(config_highlight_path, encoding='utf-8')
 
     # todo: pay attention to overwrites
-    config_highlight[theme_name] = theme
+    for theme_name, theme in themes.items():
+        config_highlight[theme_name] = theme
+
     with open(config_highlight_path, 'w', encoding='utf-8') as config_highlight_file:
         config_highlight.write(config_highlight_file)
 
@@ -45,4 +47,4 @@ def main():
         pycharm_mapping = json.load(mapping_file)
 
     new_theme = theme_converter.converters.pycharm.convert(icls_soup, pycharm_mapping)
-    save_idle_theme('test', new_theme, CONFIG_MAIN_CFG)
+    save_idle_theme(new_theme, CONFIG_MAIN_CFG)
